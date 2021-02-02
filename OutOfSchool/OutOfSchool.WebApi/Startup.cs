@@ -37,7 +37,7 @@ namespace OutOfSchool
             services.AddScoped<IJWTokenGenerator, JWTokenGenerator>();
             services.AddSingleton<IEmailService, EmailService>();
 
-            services.AddDbContext<MainContext>(x => x.Options);
+            services.AddDbContext<MainContext>(x => x.UseInMemoryDatabase("Demo"));
 
             services.AddIdentity<IdentityUser, IdentityRole>(
                 opt =>
@@ -50,7 +50,7 @@ namespace OutOfSchool
 
                 opt.User.RequireUniqueEmail = true;
                 opt.SignIn.RequireConfirmedEmail = true;
-                }).AddUserStore<MainContext>().AddDefaultTokenProviders();
+                }).AddEntityFrameworkStores<MainContext>().AddDefaultTokenProviders();
 
 
             services.AddAuthentication(cfg =>
