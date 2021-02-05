@@ -17,10 +17,7 @@ namespace OutOfSchool.Services
 
 
         public DbSet<Parent> Parents { get; set; }
-
         public DbSet<Organization> Organizations { get; set; }
-
-        public DbSet<Group> Groups { get; set; }
         public DbSet<Section> Sections { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<DirectionOfEducation> DirectionsOfEducation { get; set; }
