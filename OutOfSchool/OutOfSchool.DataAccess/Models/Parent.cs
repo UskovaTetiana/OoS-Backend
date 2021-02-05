@@ -13,5 +13,8 @@ namespace OutOfSchool.Services.Models
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "Last name is required")]
         public string LastName { get; set; }
+
+        public virtual User User { get; set; }
+        public long UserId { get; set; }
     }
 }
